@@ -1,0 +1,54 @@
+.bill-item {
+    background-color: #fafafa;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-status {
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+
+            &.cancel {
+                color: #ff4d4f;
+            }
+            &.pendding {
+                color: var(--primary-color);
+            }
+            &.success {
+                color: #52c41a;
+            }
+            &.complete {
+                color: #096dd9;
+            }
+        }
+    }
+
+    &__body {
+        gap: 0 20px;
+        background-color: #fff;
+        padding: 20px 0;
+        border: 1px solid #eee;
+    }
+
+    &__foot {
+        text-align: right;
+    }
+
+    &__action {
+        display: inline-flex;
+        gap: 0 10px;
+    }
+
+    &__p-20 {
+        padding: 20px;
+    }
+
+    &__text {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,27 @@
+.search-item {
+    display: flex;
+    gap: 0 15px;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 10px 10px 10px 0;
+    margin-bottom: 15px;
+
+    &__image {
+        width: 150px;
+    }
+
+    &__name {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+    }
+
+    &__action {
+        display: flex;
+        gap: 0 10px;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,11 @@
+export { default as SearchPage } from './Search';
+export { default as PricePage } from './Price';
+export { default as PolicyPage } from './Policy';
+export { default as HomePage } from './Home';
+export { default as ContactPage } from './Contact';
+export { default as BlogPage } from './Blog';
+export { default as AboutPage } from './About';
+export { default as OrderPage } from './Order';
+export { default as ResultPage } from './Result';
+export { default as BillPage } from './Bill';
+export { default as BillEditPage } from './BillEdit';

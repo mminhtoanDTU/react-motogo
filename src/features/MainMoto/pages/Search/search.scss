@@ -1,0 +1,28 @@
+.search {
+    &__container {
+        padding-top: var(--header-height);
+        height: calc(100vh);
+    }
+
+    &__row {
+        height: 100%;
+    }
+
+    &__left {
+        background-color: #efefef;
+        max-height: 100%;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    // &__right {
+    // }
+
+    &__searchbox {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        z-index: 99;
+        width: 200px;
+    }
+}

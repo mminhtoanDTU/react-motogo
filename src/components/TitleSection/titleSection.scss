@@ -1,0 +1,38 @@
+.s-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px !important;
+    font-weight: 700;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background-image: url('https://res.cloudinary.com/toanlee/image/upload/v1638410629/logo_vfdi3s.png');
+        background-size: cover;
+        opacity: 0.3;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 5px;
+        background-color: var(--primary-color);
+    }
+
+    &.s-title-white {
+        color: var(--white-color);
+    }
+
+    &.s-title-primary {
+        color: var(--primary-color);
+    }
+}

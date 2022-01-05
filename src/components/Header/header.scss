@@ -1,0 +1,89 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 999;
+    transition: all 0.2s linear;
+
+    &.scrolled {
+        background-color: var(--white-color);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+
+    &__container {
+        height: var(--header-height);
+        display: flex;
+        align-items: center;
+    }
+
+    &__nav {
+        display: flex;
+        gap: 0 20px;
+        align-items: center;
+        margin-left: auto;
+        height: 100%;
+
+        & li a {
+            color: var(--text-color);
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 10px;
+
+            position: relative;
+        }
+
+        & li a.active {
+            color: var(--primary-color-dark);
+        }
+
+        & li a::before {
+            position: absolute;
+            content: '';
+            bottom: -11px;
+            left: auto;
+            right: 0;
+            width: 0;
+            background-color: var(--primary-color);
+            height: 5px;
+            transition: all 0.2s linear;
+        }
+
+        & li a:hover::before {
+            width: 100%;
+            right: auto;
+            left: 0;
+        }
+    }
+
+    &__pop {
+        &-item {
+            padding: 10px 0;
+            display: block;
+            font-size: 16px;
+            color: var(--text-color);
+            transition: all 0.2s linear;
+
+            &:hover {
+                color: var(--primary-color);
+                cursor: pointer;
+            }
+        }
+
+        &-name {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+    }
+}
+
+.btn-login {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+
+    &:hover {
+        background-color: var(--primary-color-dark);
+        border-color: var(--primary-color);
+    }
+}

@@ -1,0 +1,30 @@
+.bill-edit {
+    &__container {
+        padding-top: var(--header-height);
+    }
+
+    &__left,
+    &__right {
+        padding-top: 30px;
+    }
+
+    &__sticky {
+        position: sticky;
+        top: calc(var(--header-height) + 30px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__card {
+        display: flex;
+        gap: 0 10px;
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 2px;
+        margin-bottom: 20px;
+    }
+
+    &__result {
+        text-align: right;
+    }
+}

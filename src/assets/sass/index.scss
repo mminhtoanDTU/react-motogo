@@ -1,0 +1,17 @@
+@import 'reset';
+@import 'global';
+.marker {
+    width: 50px;
+    height: 50px;
+}
+
+.marker-text {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    color: #c0392b;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+}

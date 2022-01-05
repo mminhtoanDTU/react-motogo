@@ -1,0 +1,218 @@
+.hero {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.65);
+    }
+
+    &__container {
+        height: 100vh;
+    }
+
+    &__row {
+        height: 100%;
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &-title {
+            font-size: 63px;
+            font-weight: 700;
+            color: var(--white-color);
+        }
+
+        &-desc {
+            color: var(--white-color);
+            font-size: 16px;
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+    }
+
+    &__form {
+        background-color: var(--white-color);
+        width: 100%;
+        min-height: 300px;
+        padding: 30px 30px 10px 30px;
+        border-radius: 2px;
+    }
+}
+
+.suggest {
+    padding: 70px 0;
+    background-color: #495057;
+
+    &__desc {
+        text-align: center;
+        color: var(--white-color);
+        margin-bottom: 80px;
+    }
+
+    &__list {
+        --columns: 3;
+        --gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+        grid-gap: var(--gap);
+    }
+
+    &__item {
+        background-color: #ebeced;
+        padding: 25px 15px;
+        border-radius: 2px;
+        transition: all 0.2s linear;
+
+        &:hover {
+            background-color: #ffd045;
+        }
+
+        &:hover &-price {
+            color: var(--white-color);
+        }
+
+        &:hover &-btn {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &-title {
+            font-weight: 600;
+        }
+
+        &-price {
+            color: var(--primary-color);
+            font-size: 20px;
+            transition: all 0.2s linear;
+
+            span {
+                font-size: 30px;
+                font-weight: 700;
+            }
+        }
+
+        &-text {
+            color: #555;
+        }
+
+        &-btn {
+            background-color: #333;
+            color: #fff;
+            left: 50%;
+            bottom: 0px;
+            transform: translateX(-50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            border-color: transparent;
+
+            &:hover {
+                color: #333;
+            }
+        }
+    }
+}
+
+.benefit {
+    background-color: #ebeced;
+    padding: 50px 0;
+
+    &__container {
+        --columns: 2;
+        --gap: 100px;
+        display: grid;
+        grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+        grid-gap: var(--gap);
+    }
+
+    &__item {
+        text-align: center;
+
+        &-icon {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border-radius: 80px;
+            line-height: 80px;
+
+            background-color: #fff;
+            font-size: 50px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        &-title {
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        &-text {
+        }
+    }
+}
+
+.action {
+    background-color: var(--primary-color);
+
+    &__container {
+        height: 160px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        color: white;
+        font-size: 30px;
+        margin: 0;
+
+        span {
+            color: #333;
+        }
+    }
+
+    &__btn {
+        display: inline-block;
+        padding: 10px 25px;
+        border: 1px solid #333;
+        color: #333;
+        transition: all 0.2s linear;
+
+        &:hover {
+            background-color: #333;
+            color: white;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hero__left {
+        padding-top: 70px;
+    }
+    .hero__left-title {
+        font-size: 36px;
+    }
+
+    .suggest__list {
+        --columns: 1;
+    }
+
+    .benefit__container {
+        --columns: 1;
+    }
+}

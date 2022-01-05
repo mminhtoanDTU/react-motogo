@@ -1,0 +1,5 @@
+.bill {
+    &__container {
+        padding-top: calc(var(--header-height) + 30px);
+    }
+}
