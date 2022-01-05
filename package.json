@@ -1,5 +1,6 @@
 {
     "name": "front-end",
+    "homepage": "https://serene-mahavira-d1c1eb.netlify.app/",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
