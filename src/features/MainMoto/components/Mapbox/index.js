@@ -9,12 +9,12 @@ import ReactMapGL, {
     Marker,
     Source,
 } from 'react-map-gl';
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
-import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
 import { useDispatch, useSelector } from 'react-redux';
 import axiosClient from '../../../../axiosClient';
 import { branchInfoSelector, searchInfoSelector, setBranchInfo } from '../../motoSlice';
 import PopupDistance from '../PopupDistance';
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
+import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
 
 mapboxgl.workerClass = MapboxWorker;
 
