@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import axiosClient from '../../../../axiosClient';
 import { branchInfoSelector, searchInfoSelector, setBranchInfo } from '../../motoSlice';
 import PopupDistance from '../PopupDistance';
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl-csp';
 import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
 
 mapboxgl.workerClass = MapboxWorker;
@@ -58,9 +58,11 @@ function Mapbox() {
 
     //Fetch distance between 2 location
     useEffect(() => {
+        const cancelTokenSource = axios.CancelToken.source();
         async function getdistance() {
             const res = await axios.get(
-                `https://api.mapbox.com/directions/v5/mapbox/driving/${userCoordinates.lng},${userCoordinates.lat};${branchInfo.coordinates.lng},${branchInfo.coordinates.lat}?alternatives=true&geometries=geojson&language=vi&overview=simplified&steps=true&access_token=${MAPBOX_TOKEN}`
+                `https://api.mapbox.com/directions/v5/mapbox/driving/${userCoordinates.lng},${userCoordinates.lat};${branchInfo.coordinates.lng},${branchInfo.coordinates.lat}?alternatives=true&geometries=geojson&language=vi&overview=simplified&steps=true&access_token=${MAPBOX_TOKEN}`,
+                { cancelToken: cancelTokenSource.token }
             );
 
             setRoutes(res.data.routes[0]);
@@ -69,6 +71,8 @@ function Mapbox() {
         if (branchInfo.coordinates) {
             getdistance();
         }
+
+        return () => cancelTokenSource.cancel();
     }, [branchInfo.coordinates, userCoordinates.lat, userCoordinates.lng]);
 
     const handleSetUserCoordinates = useCallback((e) => {
