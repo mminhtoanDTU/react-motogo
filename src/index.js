@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
 // import 'antd/dist/antd.css';
 import 'antd/dist/antd.variable.min.css';
