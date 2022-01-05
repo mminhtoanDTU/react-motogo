@@ -60,7 +60,7 @@ function Order() {
                 setAmount(vehicleInfo?.price[countDay - 1] * countDay);
             }
         }
-    }, [countDay]);
+    }, [countDay, vehicleInfo]);
 
     const handleFinish = async (data) => {
         const formData = {

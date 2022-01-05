@@ -11,7 +11,6 @@ import ReactMapGL, {
 } from 'react-map-gl';
 import { useDispatch, useSelector } from 'react-redux';
 import axiosClient from '../../../../axiosClient';
-import { userInfoSelector } from '../../../Auth/authSlice';
 import { branchInfoSelector, searchInfoSelector, setBranchInfo } from '../../motoSlice';
 import PopupDistance from '../PopupDistance';
 
@@ -21,7 +20,6 @@ function Mapbox() {
     //const myPoint = useLocation();
     const dispatch = useDispatch();
     const searchInfo = useSelector(searchInfoSelector);
-    const userInfo = useSelector(userInfoSelector);
     const branchInfo = useSelector(branchInfoSelector);
     const [branchList, setBranchList] = useState([]);
     const [routes, setRoutes] = useState({});
@@ -67,7 +65,7 @@ function Mapbox() {
         if (branchInfo.coordinates) {
             getdistance();
         }
-    }, [branchInfo.coordinates]);
+    }, [branchInfo.coordinates, userCoordinates.lat, userCoordinates.lng]);
 
     const handleSetUserCoordinates = useCallback((e) => {
         const value = {
@@ -83,7 +81,7 @@ function Mapbox() {
                 dispatch(setBranchInfo(branch));
             }
         },
-        [branchInfo]
+        [branchInfo, dispatch]
     );
 
     const dataOne = {

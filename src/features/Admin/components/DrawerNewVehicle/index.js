@@ -13,7 +13,7 @@ function DrawerNewVehicle({ onClose, onSubmit, onUpdate, isEditable, isShow }) {
         if (isEditable) {
             form.setFieldsValue(selectedData[0]);
         }
-    }, [isShow]);
+    }, [isShow, form, isEditable, selectedData]);
 
     return (
         <Drawer

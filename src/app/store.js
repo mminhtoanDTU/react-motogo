@@ -9,4 +9,5 @@ export const store = configureStore({
         auth: AuthReducer,
         admin: AdminReducer,
     },
+    devTools: false,
 });

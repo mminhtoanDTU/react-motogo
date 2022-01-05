@@ -9,7 +9,7 @@ function DrawerOrder({ isShow, onClose, onUpdate }) {
 
     useEffect(() => {
         form.setFieldsValue(selectedData[0]);
-    }, [isShow]);
+    }, [isShow, form, selectedData]);
 
     return (
         <Drawer

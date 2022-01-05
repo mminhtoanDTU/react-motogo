@@ -75,7 +75,7 @@ function BillEdit() {
         } else {
             setAmount(billData?.vehicle?.price[countDay - 1] * countDay);
         }
-    }, [countDay]);
+    }, [countDay, billData?.vehicle?.price]);
 
     const handleFinish = async (values) => {
         const formData = {
@@ -298,9 +298,6 @@ function BillEdit() {
                                         <DatePicker
                                             className='w-full'
                                             format='DD-MM-YYYY'
-                                            disabledDate={(current) =>
-                                                current < moment().startOf('day')
-                                            }
                                             onChange={(date, string) => {
                                                 handleChangeDate(string, 'dateStart');
                                             }}
@@ -314,9 +311,6 @@ function BillEdit() {
                                         <DatePicker
                                             className='w-full'
                                             format='DD-MM-YYYY'
-                                            disabledDate={(current) =>
-                                                current && current < moment().startOf('day')
-                                            }
                                             onChange={(date, string) => {
                                                 handleChangeDate(string, 'dateEnd');
                                             }}

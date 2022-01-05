@@ -16,7 +16,7 @@ function ResultPage() {
         }
 
         return () => clearTimeout(time);
-    }, [count]);
+    }, [count, navigate]);
 
     return (
         <Result
